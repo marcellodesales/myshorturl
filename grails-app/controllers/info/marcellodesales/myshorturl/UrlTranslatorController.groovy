@@ -1,6 +1,9 @@
 package info.marcellodesales.myshorturl
 
 class UrlTranslatorController {
+    
+    //injection of the URL translation service
+    def urlTranslationService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -96,5 +99,12 @@ class UrlTranslatorController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'urlTranslator.label', default: 'UrlTranslator'), params.id])}"
             redirect(action: "list")
         }
+    }
+    
+    def translate = {
+        urlTranslationService.translateUrl(params.url)
+        redirect(action: "list")
+        //return [translationKey: urlTranslationService.translateUrl(params.url),
+          //      originalUrl: params.url]
     }
 }
