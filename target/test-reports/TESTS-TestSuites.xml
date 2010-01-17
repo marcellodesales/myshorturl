@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="netbeams-mongo-dev02" id="0" name="UrlTranslationIntegrationTests" package="" tests="3" time="1.855" timestamp="2010-01-17T06:36:59">
+  <testsuite errors="0" failures="0" hostname="netbeams-mongo-dev02" id="0" name="GroovyUrlMappingsTests" package="" tests="1" time="1.319" timestamp="2010-01-17T08:17:30">
       <properties />
 
-      <testcase classname="UrlTranslationIntegrationTests" name="testKeyCreation" time="1.559" />
+      <testcase classname="GroovyUrlMappingsTests" name="testRedirectKeyMappings" time="1.081" />
 
-      <testcase classname="UrlTranslationIntegrationTests" name="testRepeatedKeyCreation" time="0.012" />
-
-      <testcase classname="UrlTranslationIntegrationTests" name="testNewCreation" time="0.018" />
-
-      <system-out><![CDATA[--Output from testKeyCreation--
---Output from testRepeatedKeyCreation--
---Output from testNewCreation--
+      <system-out><![CDATA[--Output from testRedirectKeyMappings--
 ]]></system-out>
 
-      <system-err><![CDATA[--Output from testKeyCreation--
---Output from testRepeatedKeyCreation--
---Output from testNewCreation--
+      <system-err><![CDATA[--Output from testRedirectKeyMappings--
 ]]></system-err>
 
   </testsuite>

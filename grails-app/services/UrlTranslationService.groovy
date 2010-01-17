@@ -12,7 +12,7 @@ class UrlTranslationService {
      * @param existingUrl is a given URL
      * @return the key for an existing URL
      */
-    private UrlTranslator getTranslationUrl(String existingUrl) {
+    private UrlTranslator getUrlTranslator(String existingUrl) {
         return UrlTranslator.findByUrl(existingUrl)
     }
     
@@ -31,12 +31,17 @@ class UrlTranslationService {
     }
 
     def translateUrl = { newUrl ->
-        def existingTranslation = this.getTranslationUrl(newUrl)
+        def existingTranslation = this.getUrlTranslator(newUrl)
         if (existingTranslation != null) {
             return existingTranslation.key
         } else {
             return this.computeNewKeyForUrl(newUrl)
         }
+    }
+    
+    def getOriginalUrl = { key ->
+        def translator = UrlTranslator.findByKey(key)
+        return (translator != null) ? translator.url : null
     }
 
     def getNumberOfUrls = {

@@ -107,4 +107,8 @@ class UrlTranslatorController {
         //return [translationKey: urlTranslationService.translateUrl(params.url),
           //      originalUrl: params.url]
     }
+    
+    def redirectKey = {
+        redirect(url:urlTranslationService.getOriginalUrl(params.urlKey))
+    }
 }

@@ -31,12 +31,17 @@ class UrlTranslationIntegrationTests extends GrailsUnitTestCase {
         assertEquals("The same key should have been returned for the same translation", this.key, sameKey1)
         assertEquals("The number of URLS should still be 1", 1, urlTranslationService.getNumberOfUrls())
     }
-    
+
     void testNewCreation() {
         def differentUrl1 = "http://www.marcellodesales2.com"
         def differentKey1 = urlTranslationService.translateUrl(differentUrl1)
         def saved = UrlTranslator.findByUrl(differentUrl1)
         assertEquals("The keys persisted must be the same for new translation", differentKey1, saved.key)
         assertEquals("The number of URLS should be incremented 2", 2, urlTranslationService.getNumberOfUrls())
+    }
+
+    void testReverseKeyRequest() {
+        def sameUrl1 = urlTranslationService.getOriginalUrl(this.key)
+        assertEquals("The same key should have been returned for the same translation", this.url, sameUrl1)
     }
 }
