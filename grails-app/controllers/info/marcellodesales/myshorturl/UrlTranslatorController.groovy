@@ -5,7 +5,7 @@ class UrlTranslatorController {
     //injection of the URL translation service
     def urlTranslationService
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [translate: "POST", save: "POST", update: "POST", delete: "POST"]
 
     def index = {
         redirect(action: "list", params: params)
@@ -100,14 +100,19 @@ class UrlTranslatorController {
             redirect(action: "list")
         }
     }
-    
-    def translate = {
-        urlTranslationService.translateUrl(params.url)
-        redirect(action: "list")
-        //return [translationKey: urlTranslationService.translateUrl(params.url),
-          //      originalUrl: params.url]
+
+    def make = {
+        return [totalUrlsServed: urlTranslationService.getNumberOfUrls()]
     }
-    
+
+    def translate = {
+        def key = urlTranslationService.translateUrl(params.url)
+        return [translationKey: key,
+                destinationUrl: grailsApplication.config.grails.serverURL + "/" + key,
+                originalUrl: params.url, 
+                totalUrlsServed: urlTranslationService.getNumberOfUrls()]
+    }
+
     def redirectKey = {
         redirect(url:urlTranslationService.getOriginalUrl(params.urlKey))
     }
