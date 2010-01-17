@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="netbeams-mongo-dev02" id="0" name="UrlTranslationIntegrationTests" package="" tests="3" time="1.855" timestamp="2010-01-17T06:36:59">
+      <properties />
+
+      <testcase classname="UrlTranslationIntegrationTests" name="testKeyCreation" time="1.559" />
+
+      <testcase classname="UrlTranslationIntegrationTests" name="testRepeatedKeyCreation" time="0.012" />
+
+      <testcase classname="UrlTranslationIntegrationTests" name="testNewCreation" time="0.018" />
+
+      <system-out><![CDATA[--Output from testKeyCreation--
+--Output from testRepeatedKeyCreation--
+--Output from testNewCreation--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testKeyCreation--
+--Output from testRepeatedKeyCreation--
+--Output from testNewCreation--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
