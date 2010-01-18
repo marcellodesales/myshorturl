@@ -23,15 +23,12 @@
                         <tbody>
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    Short URL: <h1><a href="${destinationUrl}">${destinationUrl}</a></h1>
+                                    Short URL: <h1><a href="${destinationUrl}" target="_new">${destinationUrl}</a></h1>
                                 </td>
                             </tr>
                         
                         </tbody>
                     </table>
-                </div>
-                <div class="buttons">
-                    
                 </div>
         </div>
     </body>

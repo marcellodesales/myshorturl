@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/" (controller: "urlTranslator", action:"make")
         "500"(view:'/error')
     }
 }

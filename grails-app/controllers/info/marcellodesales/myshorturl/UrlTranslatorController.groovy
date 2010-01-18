@@ -13,7 +13,8 @@ class UrlTranslatorController {
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [urlTranslatorInstanceList: UrlTranslator.list(params), urlTranslatorInstanceTotal: UrlTranslator.count()]
+        [urlTranslatorInstanceList: UrlTranslator.list(params), urlTranslatorInstanceTotal: UrlTranslator.count(),
+                serverUrl: grailsApplication.config.grails.serverURL]
     }
 
     def create = {
