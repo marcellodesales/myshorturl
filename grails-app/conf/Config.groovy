@@ -1,3 +1,4 @@
+grails.app.context = "/"
 // locations to search for config files that get merged into the main config
 // config files can either be Java properties files or ConfigSlurper scripts
 
@@ -45,7 +46,7 @@ grails.spring.bean.packages = []
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://67.161.76.254"
     }
     development {
         grails.serverURL = "http://localhost:9000/${appName}"
