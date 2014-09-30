@@ -15,20 +15,14 @@ $ grails run-app
 To create a new short URL
 
 ```
-http://localhost:9000/myshorturl/make
-URL: URL to redirect
+http://localhost:8080/
+Enter URL in the form
 ```
 
-It will give a URL with the short code.
+It will give a URL with the short code. Click in the link to get redirected the URL associated with a given code.
 
 ```
-http://localhost:9000/myshorturl/LCx92d
-```
-
-To get redirected the URL associated with a given code.
-
-```
-http://localhost:9000/myshorturl/LCx92d
+http://localhost:8080/LCx92d
 ```
 
 Origin
