@@ -109,7 +109,7 @@ class UrlTranslatorController {
     def translate = {
         def key = urlTranslationService.translateUrl(params.url)
         return [translationKey: key,
-                destinationUrl: grailsApplication.config.grails.serverURL + "/" + key,
+                destinationUrl: grailsApplication.config.grails.serverURL + key,
                 originalUrl: params.url, 
                 totalUrlsServed: urlTranslationService.getNumberOfUrls()]
     }
